@@ -1,0 +1,38 @@
+import java.util.Scanner;                               // Scanner هنا قمنا باستدعاء الكلاس
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+ 
+        Scanner input = new Scanner(System.in);         // input إسمه Scanner هنا قمنا بإنشاء كائن من الكلاس
+ 
+        String name;                                    // سنستخدم هذا المتغير لحفظ الإسم الذي سيدخله المستخدم
+        String job;                                     // سنستخدم هذا المتغير لحفظ إسم الوظيفة الذي سيدخله المستخدم
+        int age;                                        // سنستخدم هذا المتغير لحفظ العمر الذي سيدخله المستخدم
+ 
+        try {
+            System.out.print("Enter a your name: ");    // هنا طلبنا من المستخدم إدخال إسمه
+            name = input.nextLine();                    // name هنا قمنا بإستقبال النص الذي سيدخله المستخدم و تخزينه في المتغير
+ 
+            System.out.print("Enter a your job: ");     // هنا طلبنا من المستخدم إدخال إسم الوظيفة
+            job = input.nextLine();                     // job هنا قمنا بإستقبال النص الذي سيدخله المستخدم و تخزينه في المتغير
+ 
+            System.out.print("Enter a your age: ");     // هنا طلبنا من المستخدم إدخال عمره
+            age = input.nextInt();                      // age هنا قمنا بإستقبال العدد الصحيح الذي سيدخله المستخدم و تخزينه في المتغير
+ 
+            // في الأخير سيتم عرض جميع المعلومات التي أدخلها المستخدم في لم يحدث أي خطأ أثناء إدخال البيانات
+            System.out.println("\n----------- User Info ------------");
+            System.out.println("Name: " +name);
+            System.out.println("Job: " +job);
+            System.out.println("Age: " +age);
+        }
+        catch (Exception e) {                           // هنا سيتم إلتقاط أي خطأ قد يحدث و عرضه
+            System.out.print(e.toString());
+        }
+        finally {                                       // Scanner في حال تم أو لم يتم إدخال البيانات, سيتم إغلاق الـ
+            input.close();
+        }
+ 
+    }
+ 
+}
